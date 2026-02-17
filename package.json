@@ -1,0 +1,48 @@
+{
+  "name": "scrollmap-search-panel",
+  "description": "Show search-panel results on the scrollbar",
+  "repository": "https://github.com/asiloisad/pulsar-scrollmap-search-panel",
+  "keywords": [
+    "scrollmap",
+    "find",
+    "search",
+    "marker"
+  ],
+  "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.100.0 <2.0.0"
+  },
+  "main": "./lib/main",
+  "consumedServices": {
+    "search-panel": {
+      "versions": {
+        "0.0.1": "consumeSearchPanel"
+      }
+    }
+  },
+  "providedServices": {
+    "scrollmap": {
+      "versions": {
+        "1.0.0": "provideScrollmap"
+      }
+    }
+  },
+  "configSchema": {
+    "threshold": {
+      "order": 1,
+      "type": "integer",
+      "title": "Threshold",
+      "description": "Hide markers if count exceeds this value. Zero means no limit.",
+      "minimum": 0,
+      "default": 0
+    },
+    "permanent": {
+      "order": 2,
+      "type": "boolean",
+      "title": "Permanent view",
+      "description": "Keep markers visible even when the find panel is closed.",
+      "default": true
+    }
+  }
+}
